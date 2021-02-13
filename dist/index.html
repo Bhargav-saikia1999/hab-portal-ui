@@ -6,42 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="style.css">
     <title>HAB</title>
+    <style>
+        .loginBtn {
+            background: #E9E9E9;
+            border: 1px solid #8A8886;
+            border-radius: 2px;
+        }
+
+        .tabs {
+            border-left: 1.5px solid #525252;
+        }
+
+        .tabStyle {
+            border-bottom: 2px solid #E54F6D;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
     <section id="top">
         <div class="overlay"></div>
         <!-- <img src="img/hab-title.png" alt="" class="title"> -->
-        <img src="../img/card.png" alt="" class="carde">
+        <img src="img/card.png" alt="" class="carde">
     </section>
 
     <section id="navigation">
-        <div class="row" style="background-color: #f7f7f7;margin: 0;">
-            <div class="col s12 l6">
-                <ul class="tabs" style="background-color: #f7f7f7;">
-                    <li class="tab col s2 l2"><a href="#test1">Test 1</a></li>
-                    <li class="tab col s2 l2"><a class="active" href="#test2">Test 2</a></li>
-                    <li class="tab col s4 l4 disabled"><a href="#test3">Disabled Tab</a></li>
-                    <li class="tab col s2 l2"><a href="#test4">Test 4</a></li>
-                    <li class="tab col s2 l2"><a href="#test5">Test 5</a></li>
+        <div class="md:px-28 py-3 flex content-center">
+            <div class="hidden md:block text-center w-2/12 ">
+                <button class="w-3/4 py-0.5 loginBtn relative"><img src="img/iit_logo.png" alt="logo"
+                        style="position: absolute;top: 2px;left: 12%;transform: scale(0.9);">Login</button>
+            </div>
+            <div class="w-full md:w-7/12 my-1">
+                <ul class="tabs flex justify-around content-center">
+                    <li class="tab text-black text-opacity-60"><a href="#tab1">Notices</a></li>
+                    <li class="tab text-black text-opacity-60"><a href="#tab2">Hostels</a></li>
+                    <li class="tab text-black text-opacity-60"><a href="#tab3">Management</a></li>
+                    <li class="tab text-black text-opacity-60"><a href="#tab4">Ordinances</a></li>
+                    <li class="tab text-black text-opacity-60 tabStyle"><a class="active" href="#tab5">Utilities</a>
+                    </li>
                 </ul>
             </div>
-            <div id="test1" class="col s12">Test 1</div>
-            <div id="test2" class="col s12">Test 2</div>
-            <div id="test3" class="col s12">Test 3</div>
-            <div id="test4" class="col s12">Test 4</div>
+            <div class="hidden md:block w-3/12">
+                <div class="w-11/12 relative">
+                    <img src="img/icon.svg" alt="search-icon" class="absolute inset-2.5 left-2.5">
+                    <input type="text" placeholder="Search..."
+                        class="w-full px-4 py-0.5 pl-8 my-0.5 border border-solid border-gray-500 rounded-sm">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="test5">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta velit vero optio et quae dignissimos eius
+    <div id="tab1">Test 1</div>
+    <div id="tab2">Test 2</div>
+    <div id="tab3">Test 3</div>
+    <div id="tab4">Test 4</div>
+
+    <section id="tab5">
+        <p style="padding: 30px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta velit vero optio et
+            quae dignissimos eius
             natus sint earum, architecto quibusdam, reprehenderit laudantium voluptatum tempore magnam doloribus ab unde
             incidunt harum. Ducimus accusantium voluptatum nam alias, quam voluptas corrupti maiores in ab, perferendis,
             porro itaque numquam facere architecto sint obcaecati accusamus aspernatur? Cupiditate deserunt illum sunt
