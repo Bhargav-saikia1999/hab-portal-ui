@@ -74,6 +74,37 @@
             border-radius: 2px;
             box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
         }
+
+        .hostelsnav {
+            background-color: transparent;
+            transition: all 0.4s;
+        }
+
+        .nav_logo {
+            width: 50px;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+
+        .sticky_logo {
+            opacity: 1;
+            transition: all 0.4s;
+        }
+
+        .sticky_nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            transition: all 0.4s;
+            z-index: 100;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .hostelProfileCard {
+                width: 30%;
+            }
+        }
     </style>
 </head>
 
@@ -99,8 +130,9 @@
         </div>
     </section>
 
-    <section id="navigation">
-        <div class="md:px-28 pb-2 flex justify-center">
+    <section id="navigation" class="hostelsnav">
+        <div class="md:px-40 pb-2 flex justify-center">
+            <img id="nav_logo" src="img/hab_logo.svg" alt="logo" class="nav_logo hidden md:inline">
             <div class="w-full">
                 <ul class="tabs flex justify-center flex-wrap content-center font-semibold">
                     <li class="tab text-black text-opacity-60 hover:text-opacity-100 tabStyle"><a class="active"
@@ -150,10 +182,91 @@
         </div>
     </section>
 
+    <section id="hostel_management">
+        <div class="container md:px-40 px-5 py-10 mx-auto">
+            <h1 class="mb-10 px-5"><span class="text-lg font-semibold px-5 py-3 bg-white rounded"
+                    style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">HMC
+                    Members</span>
+            </h1>
+            <div class="flex justify-evenly flex-wrap -m-4">
+                <div class="hostelProfileCard w-10/12 h-auto m-2 bg-white rounded-sm"
+                    style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
+                    <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
+                        style="background: url(img/test_profile.jpg) no-repeat center;"></div>
+                    <div class="contacts relative box-border px-3 pt-1 pb-2" data-mail="email-1"
+                        data-twitter="twitter_handle">
+                        <p class="text-xl font-semibold">Name of the person</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
+                        <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">email-1@iitg.ac.in</p>
+                        <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p>
+
+                    </div>
+                </div>
+                <div class="hostelProfileCard cursor-pointer w-10/12 h-auto m-2 bg-white rounded-sm"
+                    style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
+                    <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
+                        style="background: url(img/test_profile.jpg) no-repeat center;"></div>
+                    <div class="box-border pointer-events-none px-3 pt-1 pb-2">
+                        <p class="text-xl font-semibold">Name of the person</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
+                        <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">email-2@iitg.ac.in</p>
+                        <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p>
+
+                    </div>
+                </div>
+                <div class="hostelProfileCard cursor-pointer w-10/12 h-auto m-2 bg-white rounded-sm"
+                    style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
+                    <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
+                        style="background: url(img/test_profile.jpg) no-repeat center;"></div>
+                    <div class="box-border pointer-events-none px-3 pt-1 pb-2">
+                        <p class="text-xl font-semibold">Name of the person</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
+                        <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">email-3@iitg.ac.in</p>
+                        <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p>
+
+                    </div>
+                </div>
+                <div class="hostelProfileCard cursor-pointer w-10/12 h-auto m-2 bg-white rounded-sm"
+                    style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
+                    <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
+                        style="background: url(img/test_profile.jpg) no-repeat center;"></div>
+                    <div class="box-border pointer-events-none px-3 pt-1 pb-2">
+                        <p class="text-xl font-semibold">Name of the person</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
+                        <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
+                        <p class="py-0.5 text-sm font-normal text-gray-600">email-4@iitg.ac.in</p>
+                        <p class="pt-0.5 pb-1 text-sm font-normal text-gray-600">twitter_handle</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="index.js"></script>
+    <script>
+        const navbar = document.getElementById("navigation");
+        const nav_logo = document.getElementById("nav_logo");
+        const sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky_nav");
+                nav_logo.classList.add("sticky_logo");
+            } else {
+                navbar.classList.remove("sticky_nav");
+                nav_logo.classList.remove("sticky_logo");
+            }
+        }
+
+        document.addEventListener("scroll", myFunction);
+    </script>
 </body>
 
 </html>
