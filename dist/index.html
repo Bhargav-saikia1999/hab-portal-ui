@@ -46,6 +46,20 @@
             transform: translate(-50%);
         }
 
+        .contacts:hover::after {
+            content: attr(data-mail) "\A"attr(data-twitter);
+            white-space: pre;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            background-color: rgb(243, 243, 243);
+            padding: 10px;
+            font-size: 14px;
+            color: #4B5563;
+            border-radius: 2px;
+            box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
+        }
+
         /* CSS for toggling display */
 
         .show {
@@ -117,7 +131,8 @@
                     style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
                     <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
                         style="background: url(img/test_profile.jpg) no-repeat center;"></div>
-                    <div class="box-border pointer-events-none px-3 pt-1 pb-2">
+                    <div class="contacts relative box-border px-3 pt-1 pb-2" data-mail="email-1"
+                        data-twitter="twitter_handle">
                         <p class="text-xl font-semibold">Name of the person</p>
                         <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
                         <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>

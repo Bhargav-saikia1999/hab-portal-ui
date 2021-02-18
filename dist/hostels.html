@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="hostels.css">
+    <title>Hostels</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: #f7f7f7;
+        }
+
+        #top {
+            background-image: url(img/barak.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            min-width: 100%;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .tab {
+            padding: 0 0.75rem;
+            margin-top: 0.75rem;
+            border-right: 1.5px solid #727272;
+        }
+
+        .tabStyle {
+            position: relative;
+            color: black;
+        }
+
+        .tabStyle::after {
+            content: "";
+            height: 2px;
+            width: 70%;
+            background-color: #E54F6D;
+            position: absolute;
+            bottom: 0em;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .contacts:hover::after {
+            content: attr(data-mail) "\A"attr(data-twitter);
+            white-space: pre;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            background-color: rgb(243, 243, 243);
+            padding: 10px;
+            font-size: 14px;
+            color: #4B5563;
+            border-radius: 2px;
+            box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
+        }
+    </style>
+</head>
+
+<body>
+    <section id="top">
+        <div class="overlay"></div>
+        <div class="top_content relative w-11/12 md:w-4/5 h-full mx-auto z-10 flex flex-col md:flex-row">
+            <div class="top_title w-full h-1/2 md:w-1/2 md:h-full flex justify-start items-center">
+                <img src="img/hab_logo.svg" alt="logo" class="transform scale-75 mr-0.5 md:mr-1">
+                <h2 class="text-6xl text-white font-black">Barak</h2>
+            </div>
+            <div class="top_card_container w-full h-1/2 md:w-1/2 md:h-full relative">
+                <div id="content_hab" class="absolute bottom-8 right-0">
+                    <img src="images/headers/h.svg" alt="img" class="hs">
+                    <h2>Siang, IIT GUWAHATI</h2>
+                    <hr>
+                    <p>
+                        The SiangRiver meets two other major tributaries of Brahmaputra,
+                        Dibang and Lohit in the west of Sadiya, at a place named Kobo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="navigation">
+        <div class="md:px-28 pb-2 flex justify-center">
+            <div class="w-full">
+                <ul class="tabs flex justify-center flex-wrap content-center font-semibold">
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100 tabStyle"><a class="active"
+                            target="_self" href="/hostels/barak">Barak</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/brahmaputra">Brahmaputra</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/dhansiri">Dhansiri</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/dibang">Dibang</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/dihing">Dihing</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/disang">Disang</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/kameng">Kameng</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/kapili">Kapili</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/lohit">Lohit</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/manas">Manas</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/marriedscholar">Married Scholar's hostel</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/siang">Siang</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/subansiri">Subansiri</a>
+                    </li>
+                    <li class="tab text-black text-opacity-60 hover:text-opacity-100"><a target="_self"
+                            href="/hostels/umiam">Umiam</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
