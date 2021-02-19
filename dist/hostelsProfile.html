@@ -117,7 +117,7 @@
                 <h2 class="text-6xl text-white font-black">Barak</h2>
             </div>
             <div class="top_card_container w-full h-1/2 md:w-1/2 md:h-full relative">
-                <div id="content_hab" class="absolute bottom-8 right-0">
+                <div id="content_hab" class="absolute bottom-14 right-0">
                     <img src="images/headers/h.svg" alt="img" class="hs">
                     <h2>Siang, IIT GUWAHATI</h2>
                     <hr>
@@ -126,6 +126,8 @@
                         Dibang and Lohit in the west of Sadiya, at a place named Kobo.
                     </p>
                 </div>
+                <!-- change this to the actual button -->
+                <img src="img/fullscr.png" alt="" onclick="toggleFullscreen();" class="absolute right-0 bottom-2">
             </div>
         </div>
     </section>
@@ -253,6 +255,7 @@
     <script>
         const navbar = document.getElementById("navigation");
         const nav_logo = document.getElementById("nav_logo");
+        const elem = document.getElementById("top");
         const sticky = navbar.offsetTop;
 
         function myFunction() {
@@ -262,6 +265,27 @@
             } else {
                 navbar.classList.remove("sticky_nav");
                 nav_logo.classList.remove("sticky_logo");
+            }
+        }
+
+        function toggleFullscreen() {
+            if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+                (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.cancelFullScreen) {
+                    document.cancelFullScreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
             }
         }
 
