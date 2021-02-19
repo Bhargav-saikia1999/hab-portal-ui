@@ -61,7 +61,7 @@
             transform: translate(-50%);
         }
 
-        .contacts:hover::after {
+        /* .contacts:hover::after {
             content: attr(data-mail) "\A"attr(data-twitter);
             white-space: pre;
             position: absolute;
@@ -73,7 +73,7 @@
             color: #4B5563;
             border-radius: 2px;
             box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
-        }
+        } */
 
         .hostelsnav {
             background-color: transparent;
@@ -196,8 +196,7 @@
                     style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
                     <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
                         style="background: url(img/test_profile.jpg) no-repeat center;"></div>
-                    <div class="contacts relative box-border px-3 pt-1 pb-2" data-mail="email-1"
-                        data-twitter="twitter_handle">
+                    <div class="hostel_mng_contacts px-3 pt-1 pb-2" data-mail="email-1" data-twitter="twitter_handle">
                         <p class="text-xl font-semibold">Name of the person</p>
                         <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
                         <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
@@ -206,11 +205,11 @@
 
                     </div>
                 </div>
-                <div class="hostelProfileCard cursor-pointer w-10/12 h-auto m-2 bg-white rounded-sm"
+                <div class="hostelProfileCard w-10/12 h-auto m-2 bg-white rounded-sm"
                     style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
                     <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
                         style="background: url(img/test_profile.jpg) no-repeat center;"></div>
-                    <div class="box-border pointer-events-none px-3 pt-1 pb-2">
+                    <div class="hostel_mng_contacts px-3 pt-1 pb-2" data-mail="email-1" data-twitter="twitter_handle">
                         <p class="text-xl font-semibold">Name of the person</p>
                         <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
                         <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
@@ -219,11 +218,11 @@
 
                     </div>
                 </div>
-                <div class="hostelProfileCard cursor-pointer w-10/12 h-auto m-2 bg-white rounded-sm"
+                <div class="hostelProfileCard w-10/12 h-auto m-2 bg-white rounded-sm"
                     style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
                     <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
                         style="background: url(img/test_profile.jpg) no-repeat center;"></div>
-                    <div class="box-border pointer-events-none px-3 pt-1 pb-2">
+                    <div class="hostel_mng_contacts px-3 pt-1 pb-2" data-mail="email-1" data-twitter="twitter_handle">
                         <p class="text-xl font-semibold">Name of the person</p>
                         <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
                         <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
@@ -232,11 +231,11 @@
 
                     </div>
                 </div>
-                <div class="hostelProfileCard cursor-pointer w-10/12 h-auto m-2 bg-white rounded-sm"
+                <div class="hostelProfileCard w-10/12 h-auto m-2 bg-white rounded-sm"
                     style="box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);">
                     <div class="box-border pointer-events-none border-8 border-white w-full h-64 bg-pink-300"
                         style="background: url(img/test_profile.jpg) no-repeat center;"></div>
-                    <div class="box-border pointer-events-none px-3 pt-1 pb-2">
+                    <div class="hostel_mng_contacts px-3 pt-1 pb-2" data-mail="email-1" data-twitter="twitter_handle">
                         <p class="text-xl font-semibold">Name of the person</p>
                         <p class="py-0.5 text-sm font-normal text-gray-600">Designation</p>
                         <p class="py-1 text-sm font-normal text-gray-600">+91 232342441</p>
@@ -257,6 +256,8 @@
         const navbar = document.getElementById("navigation");
         const nav_logo = document.getElementById("nav_logo");
         const elem = document.getElementById("top");
+        const contacts_divs = document.getElementsByClassName("hostel_mng_contacts");
+
         const sticky = navbar.offsetTop;
 
         function myFunction() {
@@ -287,6 +288,21 @@
                 } else if (document.webkitCancelFullScreen) {
                     document.webkitCancelFullScreen();
                 }
+            }
+        }
+
+        for (let i = 0; i < contacts_divs.length; i++) {
+            for (let j = 0; j < contacts_divs[i].children.length; j++) {
+                contacts_divs[i].children[j].addEventListener("click", (e) => {
+                    const text = e.target.textContent;
+                    const elem = document.createElement("textarea");
+                    document.body.appendChild(elem);
+                    elem.value = text;
+                    elem.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(elem);
+                    alert("Copied " + e.target.textContent + " to the clipboard");
+                })
             }
         }
 
