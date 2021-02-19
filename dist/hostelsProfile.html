@@ -39,7 +39,12 @@
             z-index: 2;
         }
 
+        .tabs {
+            text-align: center;
+        }
+
         .tab {
+            display: inline-block;
             padding: 0 0.75rem;
             margin-top: 0.75rem;
             border-right: 1.5px solid #727272;
@@ -86,8 +91,6 @@
             transition: all 0.4s;
         }
 
-
-
         .sticky_nav {
             position: fixed;
             top: 0;
@@ -95,6 +98,13 @@
             background-color: #fff;
             transition: all 0.4s;
             z-index: 100;
+        }
+
+        @media only screen and (max-width: 640px) {
+            .tabs {
+                overflow: auto;
+                white-space: nowrap;
+            }
         }
 
         @media only screen and (min-width: 768px) {
@@ -136,10 +146,10 @@
     </section>
 
     <section id="navigation" class="hostelsnav">
-        <div class="md:px-40 pb-2 flex justify-center">
+        <div class="md:px-20 lg:px-40 pb-2 flex justify-center">
             <img id="nav_logo" src="img/hab_logo.svg" alt="logo" class="nav_logo hidden md:inline">
             <div class="w-full">
-                <ul class="tabs flex justify-center flex-wrap content-center font-semibold">
+                <ul class="tabs font-semibold">
                     <li class="tab text-black text-opacity-60 hover:text-opacity-100 tabStyle"><a class="active"
                             target="_self" href="/hostels/barak">Barak</a>
                     </li>
